@@ -2,15 +2,18 @@
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 public class MyQueue<T>
 {
     private Queue<T> queue = new LinkedList<>();
     private final static int capacity = 10;
-    private Semaphore isFull = new Semaphore(0);
-    private Semaphore isFree = new Semaphore(capacity);
+    private Lock mutex = new ReentrantLock();
+    private Condition notFull = mutex.newCondition();
+    private Condition notEmpty = mutex.newCondition();
 
     public MyQueue()
     {
@@ -19,20 +22,32 @@ public class MyQueue<T>
 
     public void produce(T element) throws InterruptedException
     {
-        isFree.acquire();
-        queue.add(element);
-        isFull.release();
-        System.out.println("Producer: " + element);
+        mutex.lock();
+        try {
+            while (queue.size() == capacity) {
+                notFull.await();
+            }
+            queue.add(element);
+            notEmpty.signalAll();
+            System.out.println("Producer: " + element);
+        }finally{
+            mutex.unlock();
+        }
 
     }
 
     public void consume() throws InterruptedException
     {
-
-        isFull.acquire();
-        T item = queue.remove();
-        isFree.release();
-        System.out.println("Consumer: " + item);
+        mutex.lock();
+        try {
+            while (queue.isEmpty()) {
+                notEmpty.await();
+            }
+            T item = queue.remove();
+            System.out.println("Consumer: " + item);
+        }finally {
+            mutex.unlock();
+        }
 
 
     }
