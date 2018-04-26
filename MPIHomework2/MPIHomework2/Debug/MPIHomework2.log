@@ -1,0 +1,3 @@
+﻿  MPIHomework2.cpp
+e:\programele\adp\mpihomework2\mpihomework2\mpihomework2.cpp(27): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  MPIHomework2.vcxproj -> E:\Programele\ADP\MPIHomework2\Debug\MPIHomework2.exe
