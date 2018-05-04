@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MPIHomework3", "MPIHomework3\MPIHomework3.vcxproj", "{647F9B00-6864-44B9-AAA1-B34F0D876ADD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Debug|x64.ActiveCfg = Debug|x64
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Debug|x64.Build.0 = Debug|x64
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Debug|x86.ActiveCfg = Debug|Win32
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Debug|x86.Build.0 = Debug|Win32
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Release|x64.ActiveCfg = Release|x64
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Release|x64.Build.0 = Release|x64
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Release|x86.ActiveCfg = Release|Win32
+		{647F9B00-6864-44B9-AAA1-B34F0D876ADD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D6F2CEA-213D-4EFD-9C0E-0059506281E0}
+	EndGlobalSection
+EndGlobal
